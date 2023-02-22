@@ -6,12 +6,10 @@ use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Slim\Views\Twig;
 
-
 $definitions = [
     'settings' => function (): array {
         return require 'settings.php';
     },
-
 
     Twig::class => function (ContainerInterface $container): Twig {
         /** @var array<string, array<string, mixed>> $settings */
