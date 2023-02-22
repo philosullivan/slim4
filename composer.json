@@ -21,10 +21,10 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "app/src/"
         },
         "files": [
-            "src/helpers.php"
+            "app/src/helpers.php"
         ]
     },
     "config": {
