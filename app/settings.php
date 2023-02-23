@@ -1,6 +1,6 @@
 <?php
 // .
-declare(strict_types=1);
+declare( strict_types=1 );
 
 // .
 use function App\env;
@@ -12,9 +12,9 @@ $log_name = $dt->format( 'Y_m_d' );
 // .
 return [
 	'app' => [
-		'name'   => env( 'APP_NAME', 'Slim 4 Starter' ),
-		'env'    => env( 'APP_ENV', 'production' ),
-		'debug'  => env( 'APP_DEBUG', false ),
+		'name'   => env( 'APP_NAME' ),
+		'env'    => env( 'APP_ENV' ),
+		'debug'  => env( 'APP_DEBUG' ),
 		'locale' => 'en',
 	],
 	'view' => [

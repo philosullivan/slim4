@@ -17,13 +17,11 @@ $definitions = [
 	},
 
 	Twig::class => function (ContainerInterface $container): Twig {
-		/** @var array<string, array<string, mixed>> $settings */
 		$settings = $container->get('settings');
 		$options  = [
-			'debug' => $settings['app']['debug'],
+			'debug' => $settings['view']['debug'],
 			'cache' => $settings['view']['cache'],
 		];
-		/** @var string $path */
 		$path = $settings['view']['path'];
 		$twig = Twig::create($path, $options);
 		return $twig;
@@ -39,6 +37,11 @@ $definitions = [
 
 		return $logger;
 	},
+	DB::class => function ( ContainerInterface $container ) {
+		$settings       = $container->get( 'settings' );
+		$mysqli = new MysqliDb( $settings['database']['host'], $settings['database']['user'], $settings['database']['pass'], $settings['database']['dbname'], $settings['database']['port'] );
+		return $mysqli;
+	}
 ];
 
 return ( new ContainerBuilder() )->addDefinitions( $definitions )->build();
