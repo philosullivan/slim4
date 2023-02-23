@@ -19,15 +19,12 @@ $definitions = [
 	Twig::class => function (ContainerInterface $container): Twig {
 		/** @var array<string, array<string, mixed>> $settings */
 		$settings = $container->get('settings');
-
-		$options = [
+		$options  = [
 			'debug' => $settings['app']['debug'],
 			'cache' => $settings['view']['cache'],
 		];
-
 		/** @var string $path */
 		$path = $settings['view']['path'];
-
 		$twig = Twig::create($path, $options);
 		return $twig;
 	},
