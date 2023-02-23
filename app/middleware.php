@@ -8,7 +8,7 @@ use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
 
 // .
-return function (Slim\App $app): void {
+return function ( Slim\App $app ): void {
 	$app->addBodyParsingMiddleware();
 	$app->addRoutingMiddleware();
 	$app->add( TwigMiddleware::createFromContainer( $app, Twig::class ) );

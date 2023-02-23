@@ -1,21 +1,22 @@
 <?php
+// .
+declare( strict_types=1 );
 
-declare(strict_types=1);
-
+// .
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Slim\Views\Twig;
-
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Log\LoggerInterface;
 
+// .
 $definitions = [
 	'settings' => function (): array {
 		return require 'settings.php';
 	},
-
+	// .
 	Twig::class => function (ContainerInterface $container): Twig {
 		$settings = $container->get('settings');
 		$options  = [
@@ -26,6 +27,7 @@ $definitions = [
 		$twig = Twig::create($path, $options);
 		return $twig;
 	},
+	// .
 	LoggerInterface::class => function ( ContainerInterface $container ) {
 		$settings       = $container->get( 'settings' );
 		$loggerSettings = $settings[ 'logger' ];
@@ -37,9 +39,10 @@ $definitions = [
 
 		return $logger;
 	},
+	// .
 	DB::class => function ( ContainerInterface $container ) {
-		$settings       = $container->get( 'settings' );
-		$mysqli = new MysqliDb( $settings['database']['host'], $settings['database']['user'], $settings['database']['pass'], $settings['database']['dbname'], $settings['database']['port'] );
+		$settings = $container->get( 'settings' );
+		$mysqli   = new MysqliDb( $settings['database']['host'], $settings['database']['user'], $settings['database']['pass'], $settings['database']['dbname'], $settings['database']['port'] );
 		return $mysqli;
 	}
 ];
