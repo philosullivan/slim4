@@ -11,11 +11,16 @@ use Slim\Views\Twig;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
+use Psr\Log\LoggerInterface;
 
 // .
 abstract class Controller {
-	public function __construct( protected Twig $twig) {
 
+	private $logger;
+
+	// .
+	public function __construct( protected Twig $twig, LoggerInterface $logger ) {
+		$this->logger = $logger;
 	}
 
 	/**
@@ -33,6 +38,7 @@ abstract class Controller {
 	 */
 	protected function render( Response $response, string $template, array $data = [] ): Response {
 		$response = $response->withHeader( 'Content-Type', 'text/html; charset=utf-8' );
+		$this->logger->error('test');
 		return $this->twig->render( $response, $template, $data );
 	}
 

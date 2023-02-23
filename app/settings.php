@@ -29,7 +29,8 @@ return [
         'port'   => getenv( 'DB_PORT' ),
     ],
     'logger' => [
-        'name' => 'app',
-        'path' => __DIR__ . "/../logs/$log_name.log",
+        'level' => 'debug',
+        'name'  => 'app',
+        'path'  => __DIR__ . "/../logs/$log_name.log",
     ],
 ];
