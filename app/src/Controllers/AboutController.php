@@ -9,6 +9,8 @@ namespace App\Controllers;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 
+use Psr\Log\LoggerInterface;
+
 // .
 class AboutController extends Controller {
     public function index( Request $request, Response $response ): Response {
