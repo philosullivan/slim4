@@ -24,10 +24,11 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/src/",
-            "App\\Models\\": "app/src/models"
+            "App\\Models\\": "app/src/models",
+            "App\\Common\\": "app/src/common"
         },
         "files": [
-            "app/src/helpers.php"
+            "app/src/common/helpers.php"
         ]
     },
     "config": {
