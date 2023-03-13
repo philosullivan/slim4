@@ -18,13 +18,14 @@ use Selective\Database\Connection;
 abstract class Controller {
 
 	public $logger;
-
 	public Connection $connection;
+	public Functions $functions;
 
 	// .
-	public function __construct( protected Twig $twig, LoggerInterface $logger, Connection $connection ) {
+	public function __construct( protected Twig $twig, LoggerInterface $logger, Connection $connection, Functions $functions ) {
 		$this->logger     = $logger;
 		$this->connection = $connection;
+		$this->functions  = $functions;
 	}
 
 	/**

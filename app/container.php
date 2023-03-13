@@ -56,6 +56,9 @@ $definitions = [
         $dsn      = "$driver:host=$host;dbname=$dbname;charset=$charset";
 		return new PDO( $dsn, $username, $password );
     },
+    Functions::class => function ( ContainerInterface $container ) {
+		return new App\Controllers\Functions();
+    },
 ];
 
 return ( new ContainerBuilder() )->addDefinitions( $definitions )->build();

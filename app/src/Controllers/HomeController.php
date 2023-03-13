@@ -21,6 +21,8 @@ class HomeController extends Controller {
 		$this->logger->info( print_r( $query, true ) );
 		$this->logger->info( print_r( $rows, true ) );
 
+		$this->functions->test();
+
 
 		return $this->render( $response, 'home/index.twig' );
 	}

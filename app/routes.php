@@ -9,6 +9,8 @@ use App\Controllers\ContactController;
 
 use Slim\Routing\RouteCollectorProxy;
 
+// use App\Models\Functions;
+
 // .
 return function ( Slim\App $app ): void {
 	$app->get( '/', [HomeController::class, 'index'] )->setName('home.index');
