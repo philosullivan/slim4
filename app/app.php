@@ -11,7 +11,7 @@ use Slim\Factory\AppFactory;
 $container = require __DIR__ . '/container.php';
 
 // .
-AppFactory::setContainer($container);
+AppFactory::setContainer( $container );
 
 // .
 return AppFactory::create();
