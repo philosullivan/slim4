@@ -16,7 +16,7 @@ use Psr\Log\LoggerInterface;
 // .
 abstract class Controller {
 
-	private $logger;
+	public $logger;
 
 	// .
 	public function __construct( protected Twig $twig, LoggerInterface $logger ) {
@@ -38,7 +38,6 @@ abstract class Controller {
 	 */
 	protected function render( Response $response, string $template, array $data = [] ): Response {
 		$response = $response->withHeader( 'Content-Type', 'text/html; charset=utf-8' );
-		$this->logger->error('test');
 		return $this->twig->render( $response, $template, $data );
 	}
 

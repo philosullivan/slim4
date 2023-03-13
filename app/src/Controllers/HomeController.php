@@ -12,6 +12,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 
 class HomeController extends Controller {
 	public function index( Request $request, Response $response ): Response {
+		$this->logger->info('HomeController');
 		return $this->render( $response, 'home/index.twig' );
 	}
 }

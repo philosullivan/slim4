@@ -12,6 +12,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 // .
 class AboutController extends Controller {
     public function index( Request $request, Response $response ): Response {
+        $this->logger->info( 'AboutController' );
         return $this->render($response, 'about/index.twig');
     }
 }

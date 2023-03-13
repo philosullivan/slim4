@@ -36,7 +36,6 @@ $definitions = [
 		$logger->pushProcessor( $processor );
 		$handler = new StreamHandler( $loggerSettings['path'], $loggerSettings['level'] );
 		$logger->pushHandler( $handler );
-
 		return $logger;
 	},
 	// .
