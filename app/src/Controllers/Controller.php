@@ -13,7 +13,7 @@ use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Psr\Log\LoggerInterface;
 use Selective\Database\Connection;
-use App\Models\Functions;
+use App\Common\Functions;
 // .
 abstract class Controller {
 

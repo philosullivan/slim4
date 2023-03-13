@@ -4,7 +4,7 @@
 declare( strict_types=1 );
 
 // .
-namespace App\Models;
+namespace App\Common;
 
 //.
 use Psr\Log\LoggerInterface;
@@ -14,7 +14,6 @@ use Selective\Database\Connection;
 class Functions {
 
 	public $logger;
-
 	public Connection $connection;
 
 	public function __construct( Connection $connection, LoggerInterface $logger ) {
@@ -28,7 +27,7 @@ class Functions {
 		$this->logger->info( print_r( $query, true ) );
 		$this->logger->info( print_r( $rows, true ) );
 
-		$this->logger->info('test - functions');
+		$this->logger->info('test - common');
 	}
 
 }

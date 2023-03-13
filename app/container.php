@@ -57,7 +57,7 @@ $definitions = [
 		return new PDO( $dsn, $username, $password );
     },
     Functions::class => function ( ContainerInterface $container ) {
-		return new App\Models\Functions();
+		return new App\Common\Functions();
     },
 ];
 
