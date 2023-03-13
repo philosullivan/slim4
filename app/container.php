@@ -10,12 +10,17 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Log\LoggerInterface;
+use Selective\Config\Configuration;
+use Selective\Database\Connection;
 
 // .
 $definitions = [
 	'settings' => function (): array {
 		return require 'settings.php';
 	},
+	Connection::class => function (ContainerInterface $container) {
+        return new Connection( $container->get( PDO::class ) );
+    },
 	// .
 	Twig::class => function (ContainerInterface $container): Twig {
 		$settings = $container->get('settings');
@@ -38,12 +43,21 @@ $definitions = [
 		$logger->pushHandler( $handler );
 		return $logger;
 	},
-	// .
-	/*
-	DB::class => function ( ContainerInterface $container ) {
 
-	}
-	*/
+	// .
+    PDO::class => function ( ContainerInterface $container ) {
+        $settings = $container->get('settings')['database'];
+        $driver   = $settings['driver'];
+        $host     = $settings['host'];
+        $dbname   = $settings['database'];
+        $username = $settings['username'];
+        $password = $settings['password'];
+        $charset  = $settings['charset'];
+        // $flags    = $settings['flags'];
+        $dsn      = "$driver:host=$host;dbname=$dbname;charset=$charset";
+        //return new PDO($dsn, $username, $password, $flags);
+		return new PDO($dsn, $username, $password);
+    },
 ];
 
 return ( new ContainerBuilder() )->addDefinitions( $definitions )->build();

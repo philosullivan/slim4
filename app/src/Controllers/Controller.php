@@ -12,19 +12,19 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Psr\Log\LoggerInterface;
-
-
+use Selective\Database\Connection;
 
 // .
 abstract class Controller {
 
 	public $logger;
 
-	public $db;
+	public Connection $connection;
 
 	// .
-	public function __construct( protected Twig $twig, LoggerInterface $logger ) {
-		$this->logger = $logger;
+	public function __construct( protected Twig $twig, LoggerInterface $logger, Connection $connection ) {
+		$this->logger     = $logger;
+		$this->connection = $connection;
 	}
 
 	/**
@@ -41,10 +41,6 @@ abstract class Controller {
 	 * @throws SyntaxError
 	 */
 	protected function render( Response $response, string $template, array $data = [] ): Response {
-
-
-	
-
 		$response = $response->withHeader( 'Content-Type', 'text/html; charset=utf-8' );
 		return $this->twig->render( $response, $template, $data );
 	}
