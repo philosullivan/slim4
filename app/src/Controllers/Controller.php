@@ -12,15 +12,20 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Psr\Log\LoggerInterface;
+use MysqliDb;
+
 
 // .
 abstract class Controller {
 
 	public $logger;
 
+	public $db;
+
 	// .
-	public function __construct( protected Twig $twig, LoggerInterface $logger ) {
+	public function __construct( protected Twig $twig, LoggerInterface $logger, MysqliDb $db ) {
 		$this->logger = $logger;
+		$this->db     = $db;
 	}
 
 	/**

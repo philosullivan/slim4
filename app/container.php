@@ -10,6 +10,8 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Log\LoggerInterface;
+// use MysqliDb;
+
 
 // .
 $definitions = [
@@ -41,8 +43,8 @@ $definitions = [
 	// .
 	DB::class => function ( ContainerInterface $container ) {
 		$settings = $container->get( 'settings' );
-		$mysqli   = new MysqliDb( $settings['database']['host'], $settings['database']['user'], $settings['database']['pass'], $settings['database']['dbname'], $settings['database']['port'] );
-		return $mysqli;
+		$db       = new MysqliDb( $settings['database']['host'], $settings['database']['user'], $settings['database']['pass'], $settings['database']['dbname'], $settings['database']['port'] );
+		return $db;
 	}
 ];
 
