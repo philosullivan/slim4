@@ -16,10 +16,10 @@ class HomeController extends Controller {
 		$this->logger->info('HomeController');
 
 		// Test Query.
-		$query = $this->connection->select()->from('test');
-		$rows = $query->execute()->fetchAll() ?: [];
-		$this->logger->info( print_r( $query, true ) );
-		$this->logger->info( print_r( $rows, true ) );
+		// $query = $this->connection->select()->from('test');
+		// $rows = $query->execute()->fetchAll() ?: [];
+		// $this->logger->info( print_r( $query, true ) );
+		// $this->logger->info( print_r( $rows, true ) );
 
 		$this->functions->test();
 
