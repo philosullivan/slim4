@@ -4,7 +4,7 @@
 declare( strict_types=1 );
 
 // .
-namespace App\Controllers;
+namespace App\Models;
 
 //.
 use Psr\Log\LoggerInterface;
@@ -28,7 +28,7 @@ class Functions {
 		$this->logger->info( print_r( $query, true ) );
 		$this->logger->info( print_r( $rows, true ) );
 
-		$this->logger->info('test');
+		$this->logger->info('test - functions');
 	}
 
 }
