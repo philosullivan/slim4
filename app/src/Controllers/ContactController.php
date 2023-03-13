@@ -14,7 +14,7 @@ class ContactController extends Controller {
 
     // .
     public function index( Request $request, Response $response ): Response {
-        $this->logger->info('ContactController');
+        $this->functions->test( 'ContactController' );
         return $this->render( $response, 'contact/index.twig' );
     }
 }

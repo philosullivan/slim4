@@ -16,18 +16,20 @@ class Functions {
 	public $logger;
 	public Connection $connection;
 
+	//.
 	public function __construct( Connection $connection, LoggerInterface $logger ) {
 		$this->connection = $connection;
-		$this->logger = $logger;
+		$this->logger     = $logger;
 	}
 
-	public function test( ) {
-		$query = $this->connection->select()->from('test');
-		$rows = $query->execute()->fetchAll() ?: [];
-		$this->logger->info( print_r( $query, true ) );
-		$this->logger->info( print_r( $rows, true ) );
+	// .
+	public function test( $msg ) {
+		// $query = $this->connection->select()->from('test');
+		// $rows = $query->execute()->fetchAll() ?: [];
+		// $this->logger->info( print_r( $query, true ) );
+		// $this->logger->info( print_r( $rows, true ) );
 
-		$this->logger->info('test - common');
+		$this->logger->info( $msg );
 	}
 
 }
