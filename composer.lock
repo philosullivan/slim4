@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d19cf75fd52eea9fc001f9a5adc18d3",
+    "content-hash": "0c63c073560ce41548ebd2850df48b49",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -1800,55 +1800,6 @@
             "time": "2023-01-10T18:53:53+00:00"
         },
         {
-            "name": "thingengineer/mysqli-database-class",
-            "version": "v2.9.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class.git",
-                "reference": "03dbce1c7f1c9def315ad8ef52e1f5c0a806d6ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ThingEngineer/PHP-MySQLi-Database-Class/zipball/03dbce1c7f1c9def315ad8ef52e1f5c0a806d6ed",
-                "reference": "03dbce1c7f1c9def315ad8ef52e1f5c0a806d6ed",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "MysqliDb.php",
-                    "dbObject.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Josh Campbell",
-                    "email": "josh.lee.campbell@gmail.com",
-                    "homepage": "https://github.com/thingengineer",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Alexander V. Butenko",
-                    "email": "a.butenka@gmail.com",
-                    "homepage": "http://smarttechdo.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHP MySQL Wrapper and object mapper which utilizes MySQLi and prepared statements",
-            "support": {
-                "issues": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class/issues",
-                "source": "https://github.com/ThingEngineer/PHP-MySQLi-Database-Class/tree/v2.9.3"
-            },
-            "time": "2019-08-24T09:28:56+00:00"
-        },
-        {
             "name": "twig/twig",
             "version": "v3.5.1",
             "source": {
@@ -2020,5 +1971,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }

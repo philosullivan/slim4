@@ -18,4 +18,8 @@ $app = require __DIR__ . '/../app/app.php';
 (require __DIR__ . '/../app/routes.php')( $app );
 
 // .
+// $settings = require __DIR__ . '/../app/settings.php';
+// error_log( print_r( $settings, true ) );
+;
+// .
 $app->run();

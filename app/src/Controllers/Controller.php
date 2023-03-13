@@ -12,7 +12,7 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 use Psr\Log\LoggerInterface;
-use MysqliDb;
+
 
 
 // .
@@ -23,9 +23,8 @@ abstract class Controller {
 	public $db;
 
 	// .
-	public function __construct( protected Twig $twig, LoggerInterface $logger, MysqliDb $db ) {
+	public function __construct( protected Twig $twig, LoggerInterface $logger ) {
 		$this->logger = $logger;
-		$this->db     = $db;
 	}
 
 	/**
@@ -42,6 +41,10 @@ abstract class Controller {
 	 * @throws SyntaxError
 	 */
 	protected function render( Response $response, string $template, array $data = [] ): Response {
+
+
+	
+
 		$response = $response->withHeader( 'Content-Type', 'text/html; charset=utf-8' );
 		return $this->twig->render( $response, $template, $data );
 	}
