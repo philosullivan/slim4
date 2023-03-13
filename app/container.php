@@ -18,7 +18,7 @@ $definitions = [
 	'settings' => function (): array {
 		return require 'settings.php';
 	},
-	Connection::class => function (ContainerInterface $container) {
+	Connection::class => function ( ContainerInterface $container ) {
         return new Connection( $container->get( PDO::class ) );
     },
 	// .
@@ -53,10 +53,8 @@ $definitions = [
         $username = $settings['username'];
         $password = $settings['password'];
         $charset  = $settings['charset'];
-        // $flags    = $settings['flags'];
         $dsn      = "$driver:host=$host;dbname=$dbname;charset=$charset";
-        //return new PDO($dsn, $username, $password, $flags);
-		return new PDO($dsn, $username, $password);
+		return new PDO( $dsn, $username, $password );
     },
 ];
 
