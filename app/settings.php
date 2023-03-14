@@ -12,10 +12,12 @@ $log_name = $dt->format( 'Y_m_d' );
 // .
 return [
 	'app' => [
-		'name'   => env( 'APP_NAME' ),
-		'env'    => env( 'APP_ENV' ),
-		'debug'  => env( 'APP_DEBUG' ),
-		'locale' => 'en',
+		'name'     => env( 'APP_NAME' ),
+		'env'      => env( 'APP_ENV' ),
+		'debug'    => env( 'APP_DEBUG' ),
+		'salt'     => '',
+		'salt_key' => '',
+		'locale'   => 'en',
 	],
 	'view' => [
 		'path'        => '../resources/views',
