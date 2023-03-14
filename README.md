@@ -7,3 +7,4 @@ https://selective-php.github.io/database/slim.html
 https://github.com/selective-php/database
 https://www.slimframework.com/docs/v4/
 https://mcvendrell.medium.com/a-simple-login-auth-project-with-slim-framework-4-29f73d4e1d55
+https://github.com/slimphp/Slim-Csrf

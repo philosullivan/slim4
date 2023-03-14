@@ -7,7 +7,7 @@ use App\Controllers\HomeController;
 use App\Controllers\AboutController;
 use App\Controllers\ContactController;
 use App\Controllers\UsersController;
-
+use App\Controllers\LoginController;
 
 // .
 use Slim\Routing\RouteCollectorProxy;
@@ -19,18 +19,18 @@ return function ( Slim\App $app ): void {
 	$app->get( '/contact', [ContactController::class, 'index'] )->setName('contact.index');
 	$app->get( '/users', [UsersController::class, 'index'] )->setName('users.index');
 
-
+	$app->get( '/login', [LoginController::class, 'index'] )->setName('login.index');
 
 
 	/*
-	$app->group( '/users', function ( RouteCollectorProxy $app ) {
+		$app->group( '/users', function ( RouteCollectorProxy $app ) {
 
 
-		}
-	);
-	$app->group( '/api', function ( RouteCollectorProxy $app ) {
+			}
+		);
+		$app->group( '/api', function ( RouteCollectorProxy $app ) {
 
-		}
-	);
+			}
+		);
 	*/
 };
